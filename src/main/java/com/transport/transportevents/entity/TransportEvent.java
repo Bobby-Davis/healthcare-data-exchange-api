@@ -9,7 +9,7 @@ public class TransportEvent {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+    private Long id;
 
     @Column(name = "event_type")
     private String eventType;
@@ -36,6 +36,9 @@ public class TransportEvent {
 
     @Column(name = "source_oid")
     private String sourceOid;
+
+    @Column(name = "destination_oid")
+    private String destinationOid;
 
     public TransportEvent() {}
 
@@ -120,5 +123,12 @@ public class TransportEvent {
         this.sourceOid = sourceOid;
     }
 
+    public String getDestinationOid() {
+        return destinationOid;
+    }
+
+    public void setDestinationOid(String destinationOid) {
+        this.destinationOid = destinationOid;
+    }
 
 }
