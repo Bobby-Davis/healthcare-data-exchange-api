@@ -3,6 +3,7 @@ package com.transport.transportevents.entity;
 import jakarta.persistence.*;
 import java.time.LocalDateTime;
 
+
 @Entity
 @Table(name="transport_events")
 public class TransportEvent {

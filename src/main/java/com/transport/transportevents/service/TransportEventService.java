@@ -11,7 +11,7 @@ import java.util.Optional;
 @Service
 public class TransportEventService {
 
-    // Stores a reference to the repostory so the service can call it to perform database operations
+    // Stores a reference to the repository so the service can call it to perform database operations
     private final TransportEventRepository transportEventRepository;
 
     // passess the repository into the service called dependency injection
