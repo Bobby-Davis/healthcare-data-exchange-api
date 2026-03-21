@@ -12,9 +12,11 @@ import java.util.List;
 @RequestMapping("/api/transport-events")
 public class TransportEventController {
 
+    // TransportEventService is injected to handle the business logic of transport events
     private final TransportEventService transportEventService;
 
     
+    // Constructor to initialize the TransportEventController with TransportEventService
     public TransportEventController(TransportEventService transportEventService) {
         this.transportEventService = transportEventService;
     }
