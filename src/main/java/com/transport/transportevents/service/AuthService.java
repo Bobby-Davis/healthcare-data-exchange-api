@@ -41,4 +41,20 @@ public class AuthService {
         // Save the user to the database
         return userRepository.save(user);
     }
+
+    // Method to login a user (verify their credentials and return their user data if successful)
+    public User loginUser(String username, String password) {
+
+        // find the user by username
+        User user = userRepository.findByUsername(username)
+                .orElseThrow(() -> new IllegalArgumentException("Invalid username or password"));
+
+        // compare the entered password with the stored hashed password
+        if (!passwordEncoder.matches(password, user.getPassword())) {
+            throw new IllegalArgumentException("Invalid username or password");    
+        }
+
+        // return the user if login is successful (will change to return a JWT token in the future)
+        return user;
+    }
 }
